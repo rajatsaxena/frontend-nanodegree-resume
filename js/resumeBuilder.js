@@ -35,7 +35,7 @@ var work = {
 	{
 		"title": "Summer Research Intern",
 		"employer": "Georgia University of Technology - FAST Lab",
-		"location": "Georgia, Atlanta",
+		"location": "Georgia",
 		"dates": "May 2014-July 2014",
 		"description": "worked on a project involving classification of Galaxies on the basis of morphology"
 	}
@@ -52,16 +52,16 @@ var  education ={
 		"major": "Information System"
 	},
 	{
-		"name": "Delhi Public School, R K Puram",
+		"name": "H G  International School",
 		"degree": "Senior Secondary",
 		"graduationYear": "2011",
-		"location": "New Delhi"
+		"location": "Mt. Abu"
 	},
 	{
-		"name": "H G  International School",
+		"name": "Delhi Public School, R K Puram",
 		"degree": "Secondary",
 		"graduationYear": "2009",
-		"location": "Mt. Abu"
+		"location": "New Delhi"
 	}
 	]
 }
@@ -120,6 +120,26 @@ if(bio.skills.length > 0){
 	$("#skills").append(formattedSkill);
 }
 
+function displayEducation(){
+	for(school in education.schools){
+		$("#education").append(HTMLschoolStart);
+
+		var formattedName = HTMLschoolName.replace("%data%",education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+		//var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].major);
+		var formattedSchoolInfo = formattedName + formattedDegree
+		$(".education-entry:last").append(formattedSchoolInfo);
+
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].graduationYear);
+		$(".education-entry:last").append(formattedDates);
+
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		$(".education-entry:last").append(formattedLocation);	
+	}
+}
+
+displayEducation();
+
 function displayWork(){
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
@@ -169,3 +189,5 @@ function displayProject(){
 }
 
 displayProject();
+
+$("#mapDiv").append(googleMap);
