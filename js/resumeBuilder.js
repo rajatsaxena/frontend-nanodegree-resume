@@ -2,6 +2,12 @@ var name = "Rajat Saxena";
 var role = "Software Developer";
 var skills= ["Machine Learning", "Data Analysis and Visualization", "Computer Vision", "Human Computer Interaction", "Multimedia Computing"];
 
+var formattedName = HTMLheaderName.replace("%data%", name);
+var formattedRole = HTMLheaderRole.replace("%data%", role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
 var bio = {
 	"name": name,
 	"role": role,
@@ -78,4 +84,19 @@ var project = {
 		"description": "developed a software to teach dance using Kinect which points out the error in your body posture as compared to original dance step"
 	}
 	]
+}
+
+if(bio.skills.length > 0){
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%",bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%",bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%",bio.skills[2]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%",bio.skills[3]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%",bio.skills[4]);
+	$("#skills").append(formattedSkill);
 }
