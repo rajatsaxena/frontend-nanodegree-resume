@@ -35,7 +35,7 @@ var work = {
 	{
 		"title": "Summer Research Intern",
 		"employer": "Georgia University of Technology - FAST Lab",
-		"location": "Georgia",
+		"location": "Georgia, Atlanta",
 		"dates": "May 2014-July 2014",
 		"description": "worked on a project involving classification of Galaxies on the basis of morphology"
 	}
